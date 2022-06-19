@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="sass/main.css">
+</head>
+<body>
+    
+  <style>
+    /*form div class for input */
+    .group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+/* input class */
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+/* before for input */
+.bar:before {
+  left:50%;
+}
+/* after for input */
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+  </style>
+  
+    <!-- top -->
+    <div class="top" id="header">
+        <!-- навиигация  -->
+        <nav class="bg-light">
+            <div class="container">
+                <div class="navbar navbar-expand-md ">  
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                          <li>
+                            <div class="nav-item">
+                              <h1>Jocar auto</h1>
+                            </div>
+                          </li>
+                          <li class="nav-item active mt-2">
+                            <a class="nav-link" href="#header">Home</a>
+                          </li>
+                          <li class="nav-item mt-2">
+                            <a class="nav-link" href="./models.html">Models</a>
+                          </li>
+                          <li class="nav-item mt-2">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-secondary text-uppercase">Log In</button>
+                </div>
+            </div>
+        </nav>
+        <!-- header -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <h3 class="source-sans">Аренда авто <h1 style="color: #fff;"><span>Jocar auto</span> - для тех, кто ценит время и деньги.</h1>
+                        </h3>
+                        <br>
+                        <p style="margin-left: 10%"><img src="./images/cars.png" style="width: 10%;color: red;position: absolute;left: 0px;" alt="">Выбрать автомобиль <br> <span > автомобиль в наличии</span></p>
+                            <h3 style="font-size: 20px;">Компания <span class="source-sans">JocarAuto</span> <br> предлагает</h3>
+                            <p class="font-weight-bold">1-3 дня 23000 руб</p>
+                            <p class="font-weight-bold">4-7 дней 20000 руб</p>
+                            <p class="font-weight-bold">8-14 дней 17000 руб</p>
+                    </div>
+                    <div class="col-7">
+                       
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- модели авто -->
+    <main class="cours" id="models">
+        <div class="container">
+            <div class="row">
+                <h2 class="title font-weight-bold " >
+                    Наши топовые модели автомобилей
+                </h2>
+                <!-- первая модель авто-->
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="images/bmw x6.png" style="width: 400px; height: 200px; margin-left: 70px;" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h4 style="font-size: 16px; margin-top: 15px;">Превосходство на любых покрытиях: внедорожники BMW X6 M благодаря выдающимся динамическим характеристикам, выразительному дизайну М и несравненной маневренности демонстрируют свое доминирующее положение. Откройте для себя модели BMW X6, которые поражают уникальными эксплуатационными характеристиками, комфортом и экономичностью. Авто удивляет благодаря роскошному салону и динамике, обеспеченной автоспортивными генами..</h4>
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">Подробнее</button>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- вторая модель авто -->
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-img ">
+                                <img src="images/amg.png" style="width: 512px; height: 200px;" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4 style="font-size: 20px;">Mercedes GT s – потрясающий спорткар, каждой деталью, каждой клеточкой выражающий свой спортивный характер. Сногсшибательный коктейль динамики, с мощностью и особой элегантностью не оставляет равнодушных. Этот наследник выдающихся «предков» сумел полностью сохранить и преумножить свои традиции..</h4>
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter2">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>  
+                  
+            </div>
+           <a href="./models.html" style="text-decoration: none;"><button class="btn btn-outline-primary mt-3 text-center" style="margin: auto;display:block">Посмотреть еще</button></a> 
+        </div>
+    </main>
+    <!-- контакты -->
+    <main class="categories" id="contacts">
+        <div class="container"> 
+           
+          <div class="row" style="margin-bottom: 60px; padding-bottom: 30px;">
+            <div class="col-md-12">
+              <h3 style="text-align: center; font-weight: bold; font-size: 33px; margin-top: 20px; margin-bottom: 60px;">Контакты и обратная связь</h3>
+            </div>
+            <div class="col-md-7">
+              <div class="box" style="display: flex;">
+                <i class="bx bx-like" style="font-size: 40px; margin-top: 10px;" ></i>
+              <h3 style="margin-top: 10px; margin-left: 30px;">Гарантии</h3>
+              </div>
+              <div class="box1" style="display: flex; margin-top: 50px; ">
+                <i class="bx bxs-car-garage" style="font-size: 40px; margin-top: 10px;" ></i>
+              <h3 style="margin-top: 10px; margin-left: 30px;">Качество и профессианализм</h3>
+              </div>
+              <div class="box" style="display: flex; margin-top: 50px;">
+                <i class="bx bx-check-circle" style="font-size: 40px; margin-top: 10px;" ></i>
+              <h3 style="margin-top: 10px; margin-left: 30px;">Удобство и комфорт</h3>
+              </div>
+              <h3 style="margin-top: 10px; margin-left: 10px; font-size: 25px;">Авторы:</h3>
+              <div class="user" style="display: flex; margin-top: 20px; margin-left: 10px;">
+                <i class="bx bx-user" style="margin-top: 3px; margin-right: 5px;"></i>
+                <h6>Карнаухов Сергей</h6>
+                <i class="bx bx-user" style="margin-top: 3px; margin-right: 5px; margin-left: 10px;"></i>
+                <h6>Станислав Орлов</h6>
+              </div>
+              <div class="user" style="display: flex; margin-top: 10px;">
+                
+              </div>
+            </div>
+            <div class="col-md-5">
+              <form>
+                <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Name</label>
+                </div>
+                  
+                <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Email</label>
+                </div>
+                <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Number</label>
+                </div>
+                <button type="button" style="width: 320px;" class="btn btn-outline-info">Закажите званок</button>
+              </form>
+            </div>
+          </div>
+          
+          </div>
+    </main>
+    <!-- модальное окно -->
+    <div class="modal  fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog2" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-block">
+              <h5 class="text-center" style="font-size: 30px;" >BMW X6 M</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="font-weight-bold" style="font-size: 20px;">Характеристики:</span>
+                            <br>
+                            Объем – 4.4 л
+                            <br>
+                            Мощность - 575 л.с.
+                            <br>
+                            Коробка - робот
+                            <br>
+                            Тип двигателя - бензин
+                            <br>
+                            Топливо - АИ-98
+                            <br>
+                            Привод - полный
+                            <br>
+                            Разгон – 4.2 с
+                            <br>
+                            Расход – 11.1 л
+                            <br>
+                            Максимальная скорость, км/ч – 250
+                            </p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="font-weight-bold" style="font-size: 20px;">Цены за сутки:</span>
+                            <br>
+                            1-3 дня 25000 руб
+                            <br>
+                            4-7 дней 23000 руб
+                            <br>
+                            8-14 дней 21000 руб
+                            </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal  fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog2" role="document">
+          <div class="modal-content">
+            <div class="modal-header d-block">
+              <h5 class="text-center" style="font-size: 30px;" >Mercedes-Benz GTs AMG</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="font-weight-bold" style="font-size: 20px;">Характеристики:</span>
+                            <br>
+                            Объем – 4.0 л
+                            <br>
+                            Мощность - 522 л.с.
+                            <br>
+                            Коробка - автомат
+                            <br>
+                            Тип двигателя - бензин
+                            <br>
+                            Топливо - АИ-98
+                            <br>
+                            Привод - задний
+                            <br>
+                            Разгон – 3.3 с
+                            <br>
+                            Расход – 9.6 л
+                            <br>
+                            Максимальная скорость, км/ч – 310
+                            </p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="font-weight-bold" style="font-size: 20px;">Цены за сутки:</span>
+                            <br>
+                            1-3 дня 55000 руб
+                            <br>
+                            4-7 дней 50000 руб
+                            <br>
+                            8-14 дней 47000 руб
+                            </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- конец сайта  -->
+      <footer>
+          <div class="container">
+            <div class="d-flex justify-content-between numbers">
+                <p class="btn text-white font-weight-bold text-uppercase">8 (812) 123-45-67 | Работаем 7 дней в неделю | 9:00 — 18:00</p>
+                <div class="d-flex images">
+                    <img src="images/Instagram.svg" style="width: 14px; height: 14px;" alt="">
+                    <img src="images/Youtube.svg" style="width: 14px; height: 14px;" alt="">
+                </div>
+            </div>
+          </div>
+      </footer>
+    
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
